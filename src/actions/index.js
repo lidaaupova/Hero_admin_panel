@@ -1,3 +1,11 @@
+//Комплексный actionCreator для получения героев с сервера и обработки разных состояний
+export const fetchHeroes = (request) => (dispatch) => {
+    dispatch(heroesFetching());
+    request("http://localhost:3001/heroes")
+        .then(data => dispatch(heroesFetched(data)))
+        .catch(() => dispatch(heroesFetchingError()))
+}
+
 export const heroesFetching = () => {
     return {
         type: 'HEROES_FETCHING'
@@ -15,6 +23,13 @@ export const heroesFetchingError = () => {
     return {
         type: 'HEROES_FETCHING_ERROR'
     }
+}
+
+export const fetchFilters = (request) => (dispatch) => {
+    dispatch(filterFetching());
+        request('http://localhost:3001/filters')
+            .then(data => dispatch(filterFetched(data)))
+            .catch(() => dispatch(filterFetchingError()))
 }
 
 export const filterFetching = () => {
@@ -42,6 +57,15 @@ export const activeFilterChanged = (filter) => {
         payload: filter
     }
 }
+
+// export const activeFilterChanged = (filter) => (dispatch) => {
+//     setTimeout(() => {
+//         dispatch({
+//             type: 'ACTIVE_FILTER_CHANGED',
+//             payload: filter
+//         })
+//     }, 1000)
+// }
 
 export const heroDeleted = (id) => {
     return {
