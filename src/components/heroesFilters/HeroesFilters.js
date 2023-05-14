@@ -1,10 +1,8 @@
-import { useHttp } from "../../hooks/http.hook";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 
-import { fetchFilters } from "../../actions";
-import { filtersChanged } from "./filtersSlice";
+import { filtersChanged, fetchFilters } from "./filtersSlice";
 import Spinner from "../spinner/Spinner";
 
 // Задача для этого компонента:
@@ -15,13 +13,12 @@ import Spinner from "../spinner/Spinner";
 // Представьте, что вы попросили бэкенд-разработчика об этом
 
 const HeroesFilters = () => {
-    const {filters, filtersLoadingStatus, activeFilter} = useSelector(state => state.filters)
-    const dispatch = useDispatch()
-    const {request} = useHttp();
+    const {filters, filtersLoadingStatus, activeFilter} = useSelector(state => state.filters);
+    const dispatch = useDispatch();
 
     // Запрос на сервер для получения фильтров и последовательной смены состояния
     useEffect(() => {
-        dispatch(fetchFilters(request));
+        dispatch(fetchFilters());
         // eslint-disable-next-line 
     }, []);
 
