@@ -8,7 +8,6 @@
  - Фильтры героев по принадлежности к группе.
  - Удаление героев.
 ### Доп библиотеки: *bootstrap, sass, React-Transition-Group, formik, yup, Redux-Thunk, concurrently, uuid, classnames*
-
-<hr style="height: 1px; background-color: black">
+___
 
 ### Добавить героя в список можно кликом по кнопке слева от поля ввода, а так же кнопкой Enter.
