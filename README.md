@@ -1,1 +1,14 @@
-This is test project with hero admin panel!
+# Внутрянняя административная панель для создания, удаления, фильтрации героев/пользователей игры (например).
+
+### SPA приложение на React (хуки) + Redux (redux toolkit) создано как CRUD-модель.
+
+### В интерфейсе присутствует:
+- Поле для ввода нового героя.
+ - Список всех героев.
+ - Фильтры героев по принадлежности к группе.
+ - Удаление героев.
+### Доп библиотеки: *bootstrap, sass, React-Transition-Group, formik, yup, Redux-Thunk, concurrently, uuid, classnames*
+
+<hr style={height: 1px; background-color: #fff}>
+
+### Добавить героя в список можно кликом по кнопке слева от поля ввода, а так же кнопкой Enter.
